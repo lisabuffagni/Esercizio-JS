@@ -76,6 +76,15 @@
       "quantita": "1",
       "immagine": "1",
       "id": 3
+    },
+    {
+      "marca": "1",
+      "modello": "1",
+      "categoria": "1",
+      "prezzo": "1",
+      "quantita": "1",
+      "immagine": "1",
+      "id": 4
     }
   ]
 }
