@@ -4,12 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let btnRegister = document.querySelector('#register-page button');
     let btnLogin = document.querySelector('#login-page button');
+    let btnAddProduct = document.querySelector('#formProducts button');
 
     if(btnRegister){
         btnRegister.addEventListener('click', registerEvent)
     } else if(btnLogin){
         btnLogin.addEventListener('click', loginEvent)
-    } 
+    } else if(btnAddProduct){
+        btnAddProduct.addEventListener('click', addProductEvent)
+    }
     
     getUserLog();
 })
@@ -91,6 +94,36 @@ function loginEvent(e) {
         .then(response => response.json())
         .then(json => statusResponse(json))
         .catch(err => console.log(err))
+}
+
+function addProductEvent(e){
+    let marca = document.querySelector('#formProducts input[name="marca"]').value.trim();
+    let modello = document.querySelector('#formProducts input[name="modello"]').value.trim();
+    let categoria = document.querySelector('#formProducts input[name="categoria"]').value.trim();
+    let prezzo = document.querySelector('#formProducts input[name="prezzo"]').value.trim();
+    let quantita = document.querySelector('#formProducts input[name="quantita"]').value.trim();
+    let immagine = document.querySelector('#formProducts input[name="immagine"]').value.trim();
+
+    //console.log(marca, modello, categoria, prezzo, quantita, immagine);
+
+    let obj = {
+        marca,
+        modello,
+        categoria,
+        prezzo,
+        quantita,
+        immagine
+    }
+
+    fetch(urlApi+'products', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(err => console.log(err))
+    
 }
 
 function statusResponse(response) {

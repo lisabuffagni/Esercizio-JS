@@ -31,7 +31,34 @@
       "lastname": "Woods",
       "city": "New York",
       "id": 4
+    },
+    {
+      "email": "ramirez@gmail.com",
+      "password": "$2a$10$PdgAyDqXKqzpZD5UYuYwGObF/fVlPJe.Sb8V2CG2rs5hFk85nXU9y",
+      "firstname": "Lisa",
+      "lastname": "Ramirez",
+      "city": "Modena",
+      "id": 5
     }
   ],
-  "products": []
+  "products": [
+    {
+      "marca": "ttt",
+      "modello": "yyy",
+      "categoria": "uuu",
+      "prezzo": "666",
+      "quantita": "77",
+      "immagine": "iii",
+      "id": 1
+    },
+    {
+      "marca": "",
+      "modello": "",
+      "categoria": "",
+      "prezzo": "",
+      "quantita": "",
+      "immagine": "",
+      "id": 2
+    }
+  ]
 }
