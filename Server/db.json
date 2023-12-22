@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "email": "mudef@example.com",
+      "password": "$2a$10$B7vibEv6El8Aqbq1i0KjWePJGrdDJ8lB07RdqVVz/GbU469YEUbF.",
+      "firstname": "Darryl",
+      "lastname": "Wilkins",
+      "city": "Albuquerque",
+      "id": 1
+    },
+    {
+      "email": "jubidavoqu@example.com",
+      "password": "$2a$10$0oGLNJ.qbVvhEhK4E12EsOannWSmKbjakeh48pGpD305kv.IPUb1K",
+      "firstname": "Melissa",
+      "lastname": "Ramirez",
+      "city": "Louisville",
+      "id": 2
+    },
+    {
+      "email": "muqypese@example.com",
+      "password": "$2a$10$aPNAqAapT3Pmyq.S/3vKmeAPYHCcZWyyCGG.Mqnzudi4siEsUi3xa",
+      "firstname": "Miriam",
+      "lastname": "Rollins",
+      "city": "Atlanta",
+      "id": 3
+    },
+    {
+      "email": "zyfifosu@example.com",
+      "password": "$2a$10$ZjEMJgQzYnsE31tkA.7I0ukzu1KrwQ/fWZ48zhYuyBEDQIso4ytcC",
+      "firstname": "Sasha",
+      "lastname": "Woods",
+      "city": "New York",
+      "id": 4
+    }
+  ],
+  "products": []
+}

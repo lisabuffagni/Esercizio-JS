@@ -1,0 +1,16 @@
+{
+  "name": "esercizio-js-server",
+  "version": "1.0.0",
+  "description": "Lato Server per Esercizio JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Umberto Emanuele",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.17.4",
+    "json-server-auth": "^2.1.0"
+  }
+}
