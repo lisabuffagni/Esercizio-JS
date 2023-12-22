@@ -39,6 +39,14 @@
       "lastname": "Ramirez",
       "city": "Modena",
       "id": 5
+    },
+    {
+      "email": "fionar@gmail.it",
+      "password": "$2a$10$S0FkDmmRAeTJNqD2.kcLUeXr1A4rkPOdWg3oY4VVnDoXOmk/pegHW",
+      "firstname": "giuseppe",
+      "lastname": "drant",
+      "city": "modena",
+      "id": 6
     }
   ],
   "products": [
@@ -59,6 +67,15 @@
       "quantita": "",
       "immagine": "",
       "id": 2
+    },
+    {
+      "marca": "nokia",
+      "modello": "3310",
+      "categoria": "telefono",
+      "prezzo": "1",
+      "quantita": "1",
+      "immagine": "1",
+      "id": 3
     }
   ]
 }

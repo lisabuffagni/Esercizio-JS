@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnLogin.addEventListener('click', loginEvent)
     } else if(btnAddProduct){
         btnAddProduct.addEventListener('click', addProductEvent)
+        getProduct()
     }
     
     getUserLog();
@@ -96,35 +97,7 @@ function loginEvent(e) {
         .catch(err => console.log(err))
 }
 
-function addProductEvent(e){
-    let marca = document.querySelector('#formProducts input[name="marca"]').value.trim();
-    let modello = document.querySelector('#formProducts input[name="modello"]').value.trim();
-    let categoria = document.querySelector('#formProducts input[name="categoria"]').value.trim();
-    let prezzo = document.querySelector('#formProducts input[name="prezzo"]').value.trim();
-    let quantita = document.querySelector('#formProducts input[name="quantita"]').value.trim();
-    let immagine = document.querySelector('#formProducts input[name="immagine"]').value.trim();
 
-    //console.log(marca, modello, categoria, prezzo, quantita, immagine);
-
-    let obj = {
-        marca,
-        modello,
-        categoria,
-        prezzo,
-        quantita,
-        immagine
-    }
-
-    fetch(urlApi+'products', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(obj)
-    })
-    .then(response => response.json())
-    .then(json => console.log(json))
-    .catch(err => console.log(err))
-    
-}
 
 function statusResponse(response) {
     /* <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -161,3 +134,84 @@ function statusResponse(response) {
 
     document.querySelector('#login-page form').appendChild(alertDiv);
 }
+//admin page
+
+
+function addProductEvent(e){
+    let marca = document.querySelector('#formProducts input[name="marca"]').value.trim();
+    let modello = document.querySelector('#formProducts input[name="modello"]').value.trim();
+    let categoria = document.querySelector('#formProducts input[name="categoria"]').value.trim();
+    let prezzo = document.querySelector('#formProducts input[name="prezzo"]').value.trim();
+    let quantita = document.querySelector('#formProducts input[name="quantita"]').value.trim();
+    let immagine = document.querySelector('#formProducts input[name="immagine"]').value.trim();
+
+    //console.log(marca, modello, categoria, prezzo, quantita, immagine);
+
+    let obj = {
+        marca,
+        modello,
+        categoria,
+        prezzo,
+        quantita,
+        immagine
+    }
+
+    fetch(urlApi+'products', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(obj)
+    })
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(err => console.log(err))
+    
+}
+
+
+function getProduct(){
+
+
+    fetch(urlApi+'products',{
+        method:'GET',
+    })
+    .then(response=>response.json())
+    .then(json=>generatabella(json))
+    .catch(err=>console.log(err))
+
+
+
+}
+
+
+function generatabella(products){
+console.log(products)
+
+
+    let tabella=document.querySelector('#tabella tbody')
+
+    products.forEach(p=>{
+
+        let tr=document.createElement('tr')
+        tr.innerHTML=` <th scope="row">1</th>
+        <td>${p.immagine}</td>
+        <td>${p.modello}</td>
+        <td>${p.marca}</td>
+        <td>${p.quantita}</td>
+        <td>${p.prezzo}</td>
+        <td>
+          <button type="button" class="btn btn-sm btn-outline-danger">
+              <i class="bi bi-trash"></i>
+          </button>
+          <button type="button" class="btn btn-sm btn-outline-warning">
+              <i class="bi bi-pencil-square"></i>
+          </button>
+        </td>`
+
+        tabella.appendChild(tr)
+    })
+
+
+
+
+}
+
